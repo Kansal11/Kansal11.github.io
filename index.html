@@ -2,67 +2,440 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Secure Yield – Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Yield - Private Credit & Securitization Solutions</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700|Lato:400,700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    /* Base Styles */
     body {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
       margin: 0;
       padding: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
       font-family: 'Inter', sans-serif;
-      background-color: #0a1a2f;
-      color: #ffffff;
+      font-weight: 700;
+      margin: 0 0 0.5em;
+      line-height: 1.2;
+      color: #333;
+    }
+    p {
+      margin: 0 0 1em;
+    }
+    ul {
+      list-style: disc;
+      margin: 0 0 1em 1.2em;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 0.5em;
+    }
+    ul li::marker {
+      color: #F4B41A; /* accent color for list bullets */
+    }
+    a {
+      color: #002E5D; /* dark navy link color */
+      text-decoration: none;
+    }
+    a:hover, a:focus {
+      text-decoration: underline;
+    }
+    /* Header and Navigation */
+    header {
+      background: #002E5D; /* navy background */
+      color: #fff;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
+    }
+    .logo img {
+      display: block;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+    nav li:last-child {
+      margin-right: 0;
+    }
+    nav a {
+      color: #fff;
+      font-weight: 700;
+    }
+    nav a:hover {
+      color: #F4B41A;
+    }
+    /* Hero Section */
+    .hero {
+      background-color: #00405a; /* fallback color if image fails */
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1600x600.png?text=Banner+Image');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #fff;
+      text-align: center;
+      min-height: 60vh;
+      display: flex;
       flex-direction: column;
-      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+    .hero .hero-subtitle {
+      font-size: 1.3em;
+      margin-bottom: 1.5em;
+      font-weight: 400;
+    }
+    .cta-button {
+      display: inline-block;
+      background: #F4B41A;
+      color: #002E5D;
+      font-weight: 700;
+      padding: 12px 30px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 1em;
+    }
+    .cta-button:hover {
+      background: #e0a914;
+    }
+    /* Sections */
+    .section {
+      padding: 60px 20px;
+    }
+    .section-alt {
+      background: #f9f9f9;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-subtitle {
+      font-size: 1.1em;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 2em;
+    }
+    /* Services Section */
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2em;
+    }
+    .service {
+      flex: 1 1 30%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .service h3 {
+      font-size: 1.2em;
+      margin-top: 0;
+      margin-bottom: 0.5em;
+      color: #002E5D;
+    }
+    .service p {
+      font-size: 0.95em;
+      color: #555;
+      margin: 0;
+    }
+    /* Philosophy Section */
+    .philosophy-grid {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-top: 1.5em;
+    }
+    .philosophy-block {
+      flex: 1 1 45%;
+    }
+    .philosophy-block h3 {
+      font-size: 1.3em;
+      color: #002E5D;
+      margin-bottom: 0.5em;
+    }
+    .philosophy-block ul {
+      list-style: disc;
+      margin-left: 1.2em;
+    }
+    /* Why Secure Yield Section */
+    .why-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5em;
+    }
+    .why-item {
+      flex: 1 1 250px;
+    }
+    .why-item h3 {
+      font-size: 1.2em;
+      color: #002E5D;
+      margin-bottom: 0.3em;
+    }
+    .why-item p {
+      color: #555;
+      font-size: 0.95em;
+      margin: 0;
+    }
+    /* Contact Section */
+    #contact p {
+      font-size: 1em;
+      color: #333;
+    }
+    #contact p a {
+      color: #002E5D;
+      text-decoration: underline;
+    }
+    /* Footer */
+    footer {
+      background: #002E5D;
+      color: #fff;
+      padding: 20px 0;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
       text-align: center;
     }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+    .footer-container .social-links a {
+      color: #fff;
+      margin: 0 10px;
     }
-
-    p {
-      font-size: 1.2rem;
-      color: #cccccc;
-      max-width: 600px;
-      margin: 0 auto 2rem;
+    .footer-container .social-links a:hover {
+      color: #F4B41A;
     }
-
-    footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9rem;
-      color: #777;
+    .footer-container .footer-copy {
+      margin: 10px 0 0;
+      font-size: 0.9em;
+      color: #ccc;
     }
-
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1s ease-in forwards;
+    /* Responsive adjustments */
+    @media (max-width: 800px) {
+      .philosophy-grid {
+        flex-direction: column;
+      }
     }
-
-    .fade-in:nth-child(1) { animation-delay: 0.3s; }
-    .fade-in:nth-child(2) { animation-delay: 0.6s; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @media (max-width: 600px) {
+      .nav-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .logo {
+        margin-bottom: 10px;
+      }
+      nav ul {
+        text-align: center;
+      }
+      nav li {
+        display: block;
+        margin: 5px 0;
+      }
+      nav a {
+        display: block;
+      }
+      header {
+        position: static;
+      }
+      .hero h1 {
+        font-size: 2em;
+      }
+      .hero .hero-subtitle {
+        font-size: 1.1em;
+      }
+      .cta-button {
+        font-size: 0.9em;
+        padding: 10px 20px;
+      }
+      .services-grid {
+        flex-direction: column;
+      }
+      .philosophy-grid {
+        gap: 1.5rem;
+      }
+      .why-items {
+        flex-direction: column;
+      }
+      .footer-container {
+        flex-direction: column;
+      }
+      .footer-container .social-links {
+        margin-bottom: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="fade-in"><h1>Secure Yield</h1></div>
-  <div class="fade-in">
-    <p>We’re shaping the future of private credit in India.<br> Our full website is launching soon.</p>
-  </div>
-  <footer>&copy; 2025 Secure Yield. All rights reserved.</footer>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="https://via.placeholder.com/150x50.png?text=Secure+Yield" alt="Secure Yield Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#philosophy">Investment Philosophy</a></li>
+          <li><a href="#why-secure">Why Secure Yield</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Architecting Financial Excellence in India&#39;s Private Credit Markets</h1>
+      <p class="hero-subtitle">Bridging India&#39;s credit markets with structured finance excellence.</p>
+      <a href="#contact" class="cta-button">Contact Us</a>
+    </div>
+  </section>
+  <!-- About Us Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <h3>Global Expertise, Local Application</h3>
+      <p>Secure Yield specializes in the end-to-end securitization lifecycle, from deal origination to post-transaction monitoring. We structure high-yield opportunities for investors while enabling seamless execution and structuring for originators.</p>
+      <p>Backed by over two decades of global and domestic expertise, we combine deep industry knowledge, a strong network of originators, and a robust risk management framework to drive value creation in India&#39;s private credit market.</p>
+    </div>
+  </section>
+  <!-- Services Section -->
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p class="section-subtitle">Connecting quality originators with investors.</p>
+      <div class="services-grid">
+        <div class="service">
+          <h3>Arrangement &amp; Placement</h3>
+          <p>Tailored securitization solutions from inception to closing.</p>
+        </div>
+        <div class="service">
+          <h3>Structuring &amp; Execution</h3>
+          <p>Expert deal structuring and efficient transaction execution for optimal outcomes.</p>
+        </div>
+        <div class="service">
+          <h3>Underwriting</h3>
+          <p>Comprehensive risk assessment ensuring transaction viability.</p>
+        </div>
+        <div class="service">
+          <h3>Asset Management</h3>
+          <p>Ongoing monitoring and performance optimization of investments.</p>
+        </div>
+        <div class="service">
+          <h3>Fund Raising</h3>
+          <p>Strategic capital raising through optimized structured instruments.</p>
+        </div>
+        <div class="service">
+          <h3>Alternative Investment Solutions</h3>
+          <p>Curated access to exclusive securitized investment opportunities.</p>
+        </div>
+        <div class="service">
+          <h3>Investment Advisory</h3>
+          <p>Expert guidance for portfolio diversification through structured credit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Investment Philosophy Section -->
+  <section id="philosophy" class="section">
+    <div class="container">
+      <h2>Investment Philosophy</h2>
+      <div class="philosophy-grid">
+        <div class="philosophy-block">
+          <h3>Why Now?</h3>
+          <ul>
+            <li>Rising demand for alternative yield sources among investors.</li>
+            <li>Strengthening regulatory frameworks are boosting investor confidence in securitization.</li>
+            <li>India&#39;s evolving private credit landscape offers untapped opportunities.</li>
+            <li>Traditional lenders focus on top-tier borrowers, leaving high-quality mid-market originators under-served.</li>
+          </ul>
+        </div>
+        <div class="philosophy-block">
+          <h3>Investment Thesis</h3>
+          <ul>
+            <li>High Yield: 11-14% pre-tax returns (~2x the yield of traditional fixed-income instruments).</li>
+            <li>Stable Income: Stable and predictable cash flows for investors.</li>
+            <li>Risk Protection: Robust risk framework (e.g., bankruptcy-remote structures) to safeguard capital.</li>
+            <li>Diversification: Multi-sector, granular portfolios to reduce concentration risk.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Why Secure Yield Section -->
+  <section id="why-secure" class="section section-alt">
+    <div class="container">
+      <h2>Why Secure Yield?</h2>
+      <div class="why-items">
+        <div class="why-item">
+          <h3>Global Expertise</h3>
+          <p>Adapting global structured finance expertise specifically for the Indian credit market.</p>
+        </div>
+        <div class="why-item">
+          <h3>Private Credit Redefined</h3>
+          <p>Setting new standards for how India&#39;s credit markets connect capital with opportunity.</p>
+        </div>
+        <div class="why-item">
+          <h3>Risk-Adjusted Returns</h3>
+          <p>Superior risk-adjusted returns for investors through innovative structuring.</p>
+        </div>
+        <div class="why-item">
+          <h3>Comprehensive Execution</h3>
+          <p>End-to-end deal management from initiation to monitoring, adding value at every stage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:contact@secureyield.com">contact@secureyield.com</a></p>
+      <p>Phone: <a href="tel:+919876543210">+91 98 7654 3210</a></p>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="social-links">
+        <a href="#">LinkedIn</a> | <a href="#">Twitter</a>
+      </div>
+      <p class="footer-copy">© 2025 Secure Yield. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
