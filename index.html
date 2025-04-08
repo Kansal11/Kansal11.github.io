@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Secure Yield - Private Credit & Securitization Solutions</title>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Inter:400,700|Lato:400,700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -21,20 +20,6 @@
       margin: 0 0 0.5em;
       line-height: 1.2;
       color: #333;
-    }
-    p {
-      margin: 0 0 1em;
-    }
-    ul {
-      list-style: disc;
-      margin: 0 0 1em 1.2em;
-      padding: 0;
-    }
-    ul li {
-      margin-bottom: 0.5em;
-    }
-    ul li::marker {
-      color: #F4B41A;
     }
     a {
       color: #002E5D;
@@ -62,19 +47,16 @@
       align-items: center;
     }
     .logo img {
-      display: block;
+      height: 60px;
+      max-width: 200px;
+      object-fit: contain;
     }
     nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
-    }
-    nav li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-    nav li:last-child {
-      margin-right: 0;
+      display: flex;
+      gap: 20px;
     }
     nav a {
       color: #002E5D;
@@ -122,15 +104,83 @@
     .cta-button:hover {
       background: #e0a914;
     }
-    /* Rest of the styles remain unchanged */
+    .section {
+      padding: 60px 20px;
+    }
+    .section-alt {
+      background: #f9f9f9;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .service {
+      flex: 1 1 30%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .philosophy-grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .why-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    footer {
+      background: #002E5D;
+      color: #fff;
+      padding: 20px 0;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .footer-container .social-links a {
+      color: #fff;
+      margin: 0 10px;
+    }
+    .footer-container .footer-copy {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .hero h1 {
+        font-size: 2em;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Header & Navigation -->
+
   <header>
     <div class="nav-container">
       <div class="logo">
-        <img src="logo.jpeg" alt="Secure Yield Logo" style="height: 40px; max-width: 160px; object-fit: contain;" />
+        <img src="logo.jpeg" alt="Secure Yield Logo" />
       </div>
       <nav>
         <ul>
@@ -144,7 +194,7 @@
       </nav>
     </div>
   </header>
-  <!-- Hero Section -->
+
   <section id="home" class="hero">
     <div class="container">
       <h1>Architecting Financial Excellence in India's Private Credit Markets</h1>
@@ -152,4 +202,120 @@
       <a href="#contact" class="cta-button">Contact Us</a>
     </div>
   </section>
-  <!-- The rest of the body remains unchanged -->
+
+<!-- About Us Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <h3>Global Expertise, Local Application</h3>
+      <p>Secure Yield specializes in the end-to-end securitization lifecycle, from deal origination to post-transaction monitoring. We structure high-yield opportunities for investors while enabling seamless execution and structuring for originators.</p>
+      <p>Backed by over two decades of global and domestic expertise, we combine deep industry knowledge, a strong network of originators, and a robust risk management framework to drive value creation in India&#39;s private credit market.</p>
+    </div>
+  </section>
+  <!-- Services Section -->
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p class="section-subtitle">Connecting quality originators with investors.</p>
+      <div class="services-grid">
+        <div class="service">
+          <h3>Arrangement &amp; Placement</h3>
+          <p>Tailored securitization solutions from inception to closing.</p>
+        </div>
+        <div class="service">
+          <h3>Structuring &amp; Execution</h3>
+          <p>Expert deal structuring and efficient transaction execution for optimal outcomes.</p>
+        </div>
+        <div class="service">
+          <h3>Underwriting</h3>
+          <p>Comprehensive risk assessment ensuring transaction viability.</p>
+        </div>
+        <div class="service">
+          <h3>Asset Management</h3>
+          <p>Ongoing monitoring and performance optimization of investments.</p>
+        </div>
+        <div class="service">
+          <h3>Fund Raising</h3>
+          <p>Strategic capital raising through optimized structured instruments.</p>
+        </div>
+        <div class="service">
+          <h3>Alternative Investment Solutions</h3>
+          <p>Curated access to exclusive securitized investment opportunities.</p>
+        </div>
+        <div class="service">
+          <h3>Investment Advisory</h3>
+          <p>Expert guidance for portfolio diversification through structured credit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Investment Philosophy Section -->
+  <section id="philosophy" class="section">
+    <div class="container">
+      <h2>Investment Philosophy</h2>
+      <div class="philosophy-grid">
+        <div class="philosophy-block">
+          <h3>Why Now?</h3>
+          <ul>
+            <li>Rising demand for alternative yield sources among investors.</li>
+            <li>Strengthening regulatory frameworks are boosting investor confidence in securitization.</li>
+            <li>India&#39;s evolving private credit landscape offers untapped opportunities.</li>
+            <li>Traditional lenders focus on top-tier borrowers, leaving high-quality mid-market originators under-served.</li>
+          </ul>
+        </div>
+        <div class="philosophy-block">
+          <h3>Investment Thesis</h3>
+          <ul>
+            <li>High Yield: 11-14% pre-tax returns (~2x the yield of traditional fixed-income instruments).</li>
+            <li>Stable Income: Stable and predictable cash flows for investors.</li>
+            <li>Risk Protection: Robust risk framework (e.g., bankruptcy-remote structures) to safeguard capital.</li>
+            <li>Diversification: Multi-sector, granular portfolios to reduce concentration risk.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Why Secure Yield Section -->
+  <section id="why-secure" class="section section-alt">
+    <div class="container">
+      <h2>Why Secure Yield?</h2>
+      <div class="why-items">
+        <div class="why-item">
+          <h3>Global Expertise</h3>
+          <p>Adapting global structured finance expertise specifically for the Indian credit market.</p>
+        </div>
+        <div class="why-item">
+          <h3>Private Credit Redefined</h3>
+          <p>Setting new standards for how India&#39;s credit markets connect capital with opportunity.</p>
+        </div>
+        <div class="why-item">
+          <h3>Risk-Adjusted Returns</h3>
+          <p>Superior risk-adjusted returns for investors through innovative structuring.</p>
+        </div>
+        <div class="why-item">
+          <h3>Comprehensive Execution</h3>
+          <p>End-to-end deal management from initiation to monitoring, adding value at every stage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:investors@secureyield.in">investors@secureyield.in</a></p>
+      <p>Phone: <a href="tel:++919220537637">+919220537637</a></p>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="social-links">
+        <a href="#">LinkedIn</a> | <a href="#">Twitter</a>
+      </div>
+      <p class="footer-copy">© 2025 Secure Yield. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
