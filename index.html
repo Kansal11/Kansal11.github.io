@@ -116,16 +116,21 @@
       margin: 0 auto;
     }
     .services-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 2em;
     }
     .service {
-      flex: 1 1 30%;
       background: #fff;
-      padding: 20px;
-      border-radius: 4px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+    .service:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
     }
     .philosophy-grid {
       display: flex;
