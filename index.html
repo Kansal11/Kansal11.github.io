@@ -173,6 +173,21 @@
     #contact a:hover {
       color: #F4B41A;
     }
+    .why-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 2em;
+    }
+    .why-item h3 {
+      margin-bottom: 0.5em;
+      font-size: 1.2em;
+    }
+    .why-item p {
+      margin: 0;
+      font-size: 1em;
+      color: #555;
+    }
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
