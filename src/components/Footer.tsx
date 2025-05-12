@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-primary-900 text-white py-12">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div className="text-2xl font-bold font-serif mb-4 md:mb-0 cursor-pointer" onClick={scrollToTop}>
             Secure Yield
           </div>
@@ -32,12 +32,22 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-700 pt-8 pb-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0">
+        <div className="border-t border-gray-700 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
             <div>
               <h3 className="text-lg font-bold mb-4">Contact</h3>
-              <p className="text-gray-400 mb-2">Email: Investors@secureyield.in</p>
-              <p className="text-gray-400">Phone: +919220537637</p>
+              <div className="space-y-2">
+                <p className="text-gray-400">
+                  <span className="block">Email:</span>
+                  <a href="mailto:Investors@secureyield.in" className="hover:text-accent-400 transition-colors">
+                    Investors@secureyield.in
+                  </a>
+                </p>
+                <p className="text-gray-400">
+                  <span className="block">Phone:</span>
+                  <span>+919220537637</span>
+                </p>
+              </div>
             </div>
             
             <div>
@@ -54,22 +64,10 @@ const Footer: React.FC = () => {
                 </li>
               </ul>
             </div>
-            
-            <div>
-              <h3 className="text-lg font-bold mb-4">Legal</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-accent-400 transition-colors">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-accent-400 transition-colors">Terms of Service</a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
         
-        <div className="text-center mt-8 text-gray-500 text-sm">
+        <div className="text-center mt-12 text-gray-500 text-sm">
           <p>&copy; {currentYear} Secure Yield. All rights reserved.</p>
         </div>
       </div>
