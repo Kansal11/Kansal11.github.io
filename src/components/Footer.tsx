@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Twitter } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -21,18 +21,13 @@ const Footer: React.FC = () => {
           
           <div className="flex items-center space-x-4">
             <a 
-              href="#" 
+              href="https://www.linkedin.com/company/secure-yield-financial-services/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-accent-500 transition-colors duration-300"
               aria-label="LinkedIn"
             >
               <Linkedin size={18} />
-            </a>
-            <a 
-              href="#" 
-              className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-accent-500 transition-colors duration-300"
-              aria-label="Twitter"
-            >
-              <Twitter size={18} />
             </a>
           </div>
         </div>
@@ -41,8 +36,8 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0">
             <div>
               <h3 className="text-lg font-bold mb-4">Contact</h3>
-              <p className="text-gray-400 mb-2">Email: info@secureyield.in</p>
-              <p className="text-gray-400">Phone: +91 xx</p>
+              <p className="text-gray-400 mb-2">Email: Investors@secureyield.in</p>
+              <p className="text-gray-400">Phone: +919220537637</p>
             </div>
             
             <div>
