@@ -31,15 +31,17 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center">
-          <span 
-            className={`text-2xl font-bold font-serif cursor-pointer ${
-              isScrolled ? 'text-primary-900' : 'text-white'
-            }`}
-            onClick={() => handleScrollTo('hero')}
-          >
-            Secure Yield
-          </span>
+        <div 
+          className="flex items-center cursor-pointer"
+          onClick={() => handleScrollTo('hero')}
+        >
+          <img 
+            src="/logo.svg" 
+            alt="Secure Yield Logo" 
+            className={`h-12 w-auto ${
+              isScrolled ? 'brightness-0' : 'brightness-0 invert'
+            } transition-all duration-300`}
+          />
         </div>
 
         {/* Desktop Navigation */}
@@ -68,12 +70,6 @@ const Navbar: React.FC = () => {
           >
             Contact
           </NavLink>
-          <button 
-            onClick={() => handleScrollTo('contact')}
-            className="px-6 py-2 bg-accent-500 hover:bg-accent-600 text-white rounded-sm transition-all duration-300 transform hover:scale-105"
-          >
-            Schedule a Call
-          </button>
         </div>
 
         {/* Mobile Navigation Button */}
@@ -103,12 +99,6 @@ const Navbar: React.FC = () => {
             <MobileNavLink onClick={() => handleScrollTo('contact')}>
               Contact
             </MobileNavLink>
-            <button 
-              onClick={() => handleScrollTo('contact')}
-              className="w-full py-3 mt-2 bg-accent-500 hover:bg-accent-600 text-white rounded-sm transition-colors duration-300"
-            >
-              Schedule a Call
-            </button>
           </div>
         </div>
       )}
