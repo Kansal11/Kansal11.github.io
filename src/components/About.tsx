@@ -35,13 +35,6 @@ const About: React.FC = () => {
           ref={contentRef}
           className="opacity-0 transform translate-y-10 transition-all duration-700 delay-300"
         >
-          <div className="bg-primary-50 p-8 rounded-lg shadow-sm border-l-4 border-primary-900 mb-12">
-            <h3 className="text-2xl font-serif font-bold text-primary-800 mb-4">Our Vision</h3>
-            <p className="text-gray-700 leading-relaxed text-lg">
-              As India's private credit markets evolve, we position ourselves as trusted advisors who bring global best practices to local market realities, creating sustainable value for all stakeholders involved in our transactions.
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex items-start gap-4 p-8 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
               <Shield className="text-accent-500 w-8 h-8 mt-1 flex-shrink-0" />
@@ -72,6 +65,12 @@ const About: React.FC = () => {
                 </p>
               </div>
             </div>
+          </div>
+          <div className="bg-primary-50 p-8 rounded-lg shadow-sm border-l-4 border-primary-900 mb-12">
+            <h3 className="text-2xl font-serif font-bold text-primary-800 mb-4">Our Vision</h3>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              As India's private credit markets evolve, we position ourselves as trusted advisors who bring global best practices to local market realities, creating sustainable value for all stakeholders involved in our transactions.
+            </p>
           </div>
         </div>
       </div>
