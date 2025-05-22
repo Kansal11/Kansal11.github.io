@@ -66,6 +66,7 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
+          
           <div className="bg-primary-50 p-8 rounded-lg shadow-sm border-l-4 border-primary-900 mb-12">
             <h3 className="text-2xl font-serif font-bold text-primary-800 mb-4">Our Vision</h3>
             <p className="text-gray-700 leading-relaxed text-lg">
