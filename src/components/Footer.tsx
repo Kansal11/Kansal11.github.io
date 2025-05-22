@@ -1,4 +1,18 @@
-<footer className="bg-primary-900 text-white py-12">
+import React from 'react';
+import { Linkedin } from 'lucide-react';
+
+const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+  
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <footer className="bg-primary-900 text-white py-12">
   <div className="container mx-auto px-6 space-y-12">
     {/* Top Row: Logo + Social */}
     <div className="flex flex-col md:flex-row justify-between items-center">
@@ -62,3 +76,8 @@
     </div>
   </div>
 </footer>
+
+  );
+};
+
+export default Footer;
