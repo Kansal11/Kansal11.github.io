@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useInView } from '../hooks/useInView';
-import { Mail, Phone, Linkedin, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
@@ -69,69 +69,42 @@ const Contact: React.FC = () => {
           Schedule a Conversation
         </h2>
         
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className={`transition-all duration-1000 delay-300 transform ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <div className="space-y-6 mb-8">
-                  <div className="p-6 bg-white rounded-lg shadow-sm">
-                    <h4 className="text-xl font-bold text-primary-900 mb-3">Originators</h4>
-                    <p className="text-gray-700 mb-4">
-                      Prepared to explore how sophisticated private credit solutions can transform your financial trajectory? Initiate a dialogue with our team of structured finance virtuosos.
-                    </p>
-                  </div>
-                  
-                  <div className="p-6 bg-white rounded-lg shadow-sm">
-                    <h4 className="text-xl font-bold text-primary-900 mb-3">Investors</h4>
-                    <p className="text-gray-700 mb-4">
-                      Discover compelling private credit opportunities with Secure Yield. Our team is available to discuss your investment objectives, risk preferences, and target returns to identify suitable securitization structures aligned with your portfolio strategy.
-                    </p>
-                  </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Left Column */}
+              <div className="space-y-6">
+                <div className="p-6 bg-white rounded-lg shadow-sm">
+                  <h4 className="text-xl font-bold text-primary-900 mb-3">Originators</h4>
+                  <p className="text-gray-700">
+                    Prepared to explore how sophisticated private credit solutions can transform your financial trajectory? Initiate a dialogue with our team of structured finance virtuosos.
+                  </p>
                 </div>
                 
-                <div className="space-y-4 bg-white p-8 rounded-lg shadow-sm">
-                  <h4 className="text-xl font-bold text-primary-800 mb-4">Connect with us</h4>
-                  
-                  <div className="flex items-center gap-3">
-                    <Mail size={20} className="text-accent-500" />
-                    <div className="space-y-2">
-                      <a href="mailto:Investors@secureyield.in" className="block text-gray-700 hover:text-accent-500 transition-colors">
-                        Investors@secureyield.in
-                      </a>
-                      <a href="mailto:Originators@secureyield.in" className="block text-gray-700 hover:text-accent-500 transition-colors">
-                        Originators@secureyield.in
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-3">
-                    <Phone size={20} className="text-accent-500" />
-                    <p className="text-gray-700">+919220537637</p>
-                  </div>
-                  
-                  <div className="flex items-center gap-4 mt-6">
-                    <a href="https://www.linkedin.com/company/secure-yield-financial-services/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-900 flex items-center justify-center text-white hover:bg-accent-500 transition-colors">
-                      <Linkedin size={18} />
-                    </a>
-                  </div>
+                <div className="p-6 bg-white rounded-lg shadow-sm">
+                  <h4 className="text-xl font-bold text-primary-900 mb-3">Investors</h4>
+                  <p className="text-gray-700">
+                    Discover compelling private credit opportunities with Secure Yield. Our team is available to discuss your investment objectives, risk preferences, and target returns to identify suitable securitization structures aligned with your portfolio strategy.
+                  </p>
                 </div>
               </div>
 
+              {/* Right Column - Contact Form */}
               <div>
-                <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-sm">
-                  <h4 className="text-xl font-bold text-primary-800 mb-6">Send us a message</h4>
+                <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-sm h-full">
+                  <h4 className="text-xl font-bold text-primary-800 mb-4">Send us a message</h4>
                   
                   {submitStatus.type && (
-                    <div className={`mb-6 p-4 rounded-md ${
+                    <div className={`mb-4 p-3 rounded-md ${
                       submitStatus.type === 'success' ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'
                     }`}>
                       {submitStatus.message}
                     </div>
                   )}
                   
-                  <div className="space-y-6">
+                  <div className="space-y-4">
                     <div>
-                      <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-1">
                         I am an
                       </label>
                       <select
@@ -139,7 +112,7 @@ const Contact: React.FC = () => {
                         name="type"
                         value={formData.type}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
                         required
                       >
                         <option value="originator">Originator</option>
@@ -148,7 +121,7 @@ const Contact: React.FC = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                         Name
                       </label>
                       <input
@@ -157,13 +130,13 @@ const Contact: React.FC = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
                         required
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                         Email
                       </label>
                       <input
@@ -172,13 +145,13 @@ const Contact: React.FC = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
                         required
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                         Message
                       </label>
                       <textarea
@@ -186,8 +159,8 @@ const Contact: React.FC = () => {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        rows={6}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
+                        rows={3}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
                         required
                       ></textarea>
                     </div>
@@ -195,7 +168,7 @@ const Contact: React.FC = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary-900 text-white rounded-md hover:bg-primary-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full flex items-center justify-center gap-2 px-6 py-2 bg-primary-900 text-white rounded-md hover:bg-primary-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <Send size={18} />
                       {isSubmitting ? 'Sending...' : 'Send Message'}
