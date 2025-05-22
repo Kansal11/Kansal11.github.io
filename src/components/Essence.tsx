@@ -21,20 +21,9 @@ const Essence: React.FC = () => {
           </h2>
           
           <div className={`transition-all duration-1000 delay-300 transform ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="text-center mb-12">
-              <span className="inline-block h-20 w-20 rounded-full bg-accent-500 bg-opacity-20 flex items-center justify-center mb-6">
-                <span className="h-16 w-16 rounded-full bg-accent-500 flex items-center justify-center">
-                  <span className="text-xl font-serif font-bold">"SY"</span>
-                </span>
-              </span>
-              <p className="text-lg md:text-xl italic font-serif text-accent-200">
-                "The strategic balance between risk and return"
-              </p>
-            </div>
-            
             <div className="space-y-6 text-gray-200">
               <p className="leading-relaxed">
-                "Secure Yield" embodies our core philosophy—the strategic balance between risk and return. Our name reflects our commitment to designing financial solutions that deliver optimal value for all stakeholders.
+                "Secure Yield" embodies our core philosophy. Our name reflects our commitment to designing financial solutions that deliver optimal value for all stakeholders.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6 mt-10">
